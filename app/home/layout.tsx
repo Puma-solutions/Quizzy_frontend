@@ -6,9 +6,9 @@ const homeLayout = ({children} : {
   return (
     <>
     <Navigation/>
-    <main className=" p-32">
+    <>
         {children}
-    </main>
+    </>
     </>
   )
 }

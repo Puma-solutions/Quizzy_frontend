@@ -7,9 +7,9 @@ const HomePage = () => {
         exams: 4,
         questions: 10,}]
   return (
-    <>
-    <SubjectList subjectList={a} />
-    </>
+    <main className=" p-32 flex">
+    <SubjectList subjectList={a}/>
+    </main>
   )
 }
 
