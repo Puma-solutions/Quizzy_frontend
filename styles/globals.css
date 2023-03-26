@@ -10,6 +10,10 @@
     color: rgb(231, 231, 231);
 }
 
+.section {
+    background-image: url('../assets/GlobalBG.png');
+}
+
 @font-face {
     font-family: 'CinaGEOTest';
     src: url('/fonts/CinaGEOTest-Black.otf') format('opentype');

@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        128: "32rem",
+      },
       fontFamily: {
         cina: ["CinaGEOTest", "sans-serif"],
       },
