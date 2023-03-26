@@ -4,3 +4,8 @@
     width: 100vw;
     height: 100vh;
 }
+
+.btn:hover p {
+    transform: translate(0);
+    opacity: 1;
+}

@@ -14,6 +14,16 @@
     background-image: url('../assets/GlobalBG.png');
 }
 
+.btn p {
+    transition: all 0.5s;
+
+}
+
+.btn:hover p {
+    transform: translate(0);
+    opacity: 1;
+}
+
 @font-face {
     font-family: 'CinaGEOTest';
     src: url('/fonts/CinaGEOTest-Black.otf') format('opentype');

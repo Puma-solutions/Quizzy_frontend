@@ -13,7 +13,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className=" bg-slate-800 font-cina">
-        <Navigation/>
         {children}
         </body>
     </html>
