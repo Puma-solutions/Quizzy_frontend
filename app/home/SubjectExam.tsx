@@ -21,6 +21,7 @@ const SubjectExam = ({ exam }: SubjectExamProps) => {
       <div>
         <h3>{exam.examName}</h3>
         <p>{exam.questions.length} preguntas</p>
+        <p>yes</p>
       </div>
       <div>
         <button>
