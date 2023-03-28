@@ -1,19 +1,17 @@
 interface SubjectDetailListProps {
   subjectDetail: {
+    id: string;
     name: string;
-    exams: [
-      {
-        examName: string;
-        questions: [
-          {
-            question: string;
-            correctAnswer: string;
-            id: string;
-          }
-        ];
-      }
-    ];
-    id: number;
+    exams: {
+      id: string;
+      name: string;
+      countQuestions: number;
+      questions: {
+        question: string;
+        answer: string;
+        _id: string;
+      }[];
+    }[];
   };
 }
 
