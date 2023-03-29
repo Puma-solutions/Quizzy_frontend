@@ -1,3 +1,5 @@
+import SubjectDetail from "./SubjectDetail";
+
 interface SubjectDetailListProps {
   subjectDetail: {
     id: string;
@@ -17,9 +19,13 @@ interface SubjectDetailListProps {
 
 const SubjectDetailList = ({ subjectDetail }: SubjectDetailListProps) => {
   return (
-    <section>
-      <h1>{subjectDetail.name}</h1>
-      <article></article>
+    <section className=" w-full flex flex-col gap-14">
+      <h1 className="text-3xl">{subjectDetail.name}</h1>
+      <article className="flex justify-center items-start flex-col">
+        {subjectDetail.exams.map((exams) => (
+          <SubjectDetail exam={exams} />
+        ))}
+      </article>
     </section>
   );
 };
