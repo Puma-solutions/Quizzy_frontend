@@ -1,11 +1,29 @@
-.home {
-    background-image: url('../assets/Mesa\ de\ trabajo\ 1.png');
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-}
-
 .btn:hover p {
     transform: translate(0);
     opacity: 1;
+}
+
+.layout-display {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        "head head"
+        "nav  main";
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 1fr 3fr;
+}
+
+.head {
+    grid-area: head;
+}
+
+.nav {
+    grid-area: nav;
+    padding: 0 1rem 0 5rem;
+}
+
+.main {
+    grid-area: main;
+    padding: 0 3rem 2rem 1rem;
 }
