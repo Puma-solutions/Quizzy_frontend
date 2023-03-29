@@ -1,6 +1,7 @@
 "use client";
 import { BsChevronRight } from "react-icons/bs";
 import { useState } from "react";
+import Link from "next/link";
 
 interface SubjectItemProps {
   subject: {
@@ -12,27 +13,32 @@ interface SubjectItemProps {
 }
 
 const SubjectItem = ({ subject }: SubjectItemProps) => {
-  const [SubjectTarget, setSubjectTarget] = useState(
-    "bg-slate-700 flex flex-col p-4 rounded-xl w-11/12 transition-all duration-800"
-  );
+  const [isActive, setIsActive] = useState(false);
 
   const SubjectItemHandler = () => {
-    setSubjectTarget(
-      "bg-slate-600 flex flex-col p-4 rounded-xl w-12/12 transition duration-800"
-    );
+    setIsActive(true);
   };
 
   return (
-    <div className={SubjectTarget} onClick={SubjectItemHandler}>
-      <h4 className="text-xl flex justify-between items-center gap-3">
-        {subject.name} <BsChevronRight />
-      </h4>
-      <div className="flex">
-        <p className=" text-slate-300">
-          {subject.countExams} exàmenes - {subject.countQuestions} preguntas
-        </p>
+    <Link href={`http://localhost:3000/home/${subject.id}`}>
+      <div
+        className={
+          isActive
+            ? "bg-slate-600 flex flex-col p-4 rounded-xl w-12/12 transition-all duration-800"
+            : "bg-slate-700 flex flex-col p-4 rounded-xl w-11/12 transition-all duration-800"
+        }
+        onClick={SubjectItemHandler}
+      >
+        <h4 className="text-xl flex justify-between items-center gap-3">
+          {subject.name} <BsChevronRight />
+        </h4>
+        <div className="flex">
+          <p className=" text-slate-300">
+            {subject.countExams} exàmenes - {subject.countQuestions} preguntas
+          </p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
