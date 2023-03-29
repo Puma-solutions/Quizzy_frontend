@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       spacing: {
         128: "32rem",
+        140: "40rem",
       },
       fontFamily: {
         cina: ["CinaGEOTest", "sans-serif"],

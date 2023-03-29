@@ -46,7 +46,7 @@ const SubjectDetail = ({ exam }: SubjectDetailProps) => {
           >
             <BsChevronDown className=" w-7 h-7" />
           </button>
-          <Link href={`http://localhost:3000/exam/${exam.id}`}>
+          <Link href={`http://localhost:3000/exams/${exam.id}`}>
             <button>
               <BsFillPlayCircleFill className=" w-7 h-7" />
             </button>
