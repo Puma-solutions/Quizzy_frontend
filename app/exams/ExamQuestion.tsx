@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ExamQuestionProps {
   question: {
@@ -8,6 +8,7 @@ interface ExamQuestionProps {
     answer: string;
     _id: string;
     value: string;
+    answerUser: string;
   };
   setQuestion: Function;
   counter: number;
@@ -18,6 +19,7 @@ const ExamQuestion = ({
   setQuestion,
   counter,
 }: ExamQuestionProps) => {
+  console.log("hola");
   const [show, setShow] = useState(false);
   const [userAnswer, setUserAnswer] = useState("");
 
@@ -32,6 +34,8 @@ const ExamQuestion = ({
   const valueAnswerHandler = (e: any) => {
     setShow(false);
     question.value = e.target.id;
+    question.answerUser = userAnswer;
+    console.log("question", question);
     setQuestion(counter + 1);
   };
   return (

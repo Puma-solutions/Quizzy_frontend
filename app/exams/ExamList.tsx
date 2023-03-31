@@ -21,26 +21,29 @@ interface ExamListProps {
 
 const ExamList = ({ exam }: ExamListProps) => {
   const [counter, setCounter] = useState(0);
+  const [newQuestions, setNewQuestions] = useState([{}]);
   const randomizeQuestions = () => {
-    const a = exam.questions.sort((_, __) => Math.random() - 0.5);
-    return a.map((question) => ({
+    const sortedQuestions = exam.questions.sort((_, __) => Math.random() - 0.5);
+    const expandedQuestions = sortedQuestions.map((question) => ({
       ...question,
       value: "",
+      answerUser: "",
     }));
+    setNewQuestions(expandedQuestions);
   };
 
-  const questionsRandomized = randomizeQuestions();
+  randomizeQuestions();
 
   const incrementCounter = (counterValue: number) => {
-    counterValue === questionsRandomized.length
-      ? console.log(questionsRandomized)
+    counterValue === newQuestions.length
+      ? console.log(newQuestions)
       : setCounter(counterValue);
   };
 
   return (
     <>
       <ExamQuestion
-        question={questionsRandomized[counter]}
+        question={newQuestions[counter]}
         setQuestion={incrementCounter}
         counter={counter}
       />

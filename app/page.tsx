@@ -2,7 +2,7 @@ import Link from "next/link";
 import "../styles/index.css";
 
 const Home = () => {
-  const a = "";
+  const a = "k";
   return (
     <main className="home w-screen h-screen flex justify-center items-start flex-col p-32 gap-4">
       <h1 className=" font-bold text-9xl overflow-hidden">Quizzy</h1>
