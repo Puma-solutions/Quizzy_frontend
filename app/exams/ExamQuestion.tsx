@@ -56,7 +56,7 @@ const ExamQuestion = ({
           </button>
         </form>
       ) : (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 w-full">
           <div className=" bg-slate-800 p-4 rounded-lg flex flex-col gap-2">
             <h4 className="text-xl">Tu respuesta</h4>
             <p className=" font-light">{userAnswer}</p>

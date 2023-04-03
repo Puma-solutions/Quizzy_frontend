@@ -2,6 +2,7 @@
 
 import ExamQuestion from "./ExamQuestion";
 import { useEffect, useState } from "react";
+import { BsFillPrinterFill } from "react-icons/bs";
 
 interface ExamListProps {
   exam: {
@@ -68,6 +69,9 @@ const ExamList = ({ exam }: ExamListProps) => {
     <>
       {showPrint ? (
         <section className="bg-slate-700 flex w-3/4 h-full flex-col justify-center items-start p-10 gap-10 rounded-2xl overflow-y-scroll">
+          <button className=" bg-sky-600 p-2 rounded-xl w-1/4 flex gap-4 justify-center items-center text-xl">
+            Imprimir resultado <BsFillPrinterFill />
+          </button>
           {newQuestions.map((question) => (
             <article className="flex flex-col gap-4 w-full" key={question._id}>
               <h3 className="text-xl">{question.question}</h3>
