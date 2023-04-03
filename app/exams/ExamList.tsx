@@ -3,6 +3,7 @@
 import ExamQuestion from "./ExamQuestion";
 import { useEffect, useState } from "react";
 import { BsFillPrinterFill } from "react-icons/bs";
+import ExamPrint from "./ExamPrint";
 
 interface ExamListProps {
   exam: {
@@ -56,6 +57,10 @@ const ExamList = ({ exam }: ExamListProps) => {
     randomizeQuestions();
   }, []);
 
+  const print = () => {
+    window.print();
+  };
+
   const updateCuestion = (counterValue: number, question: object) => {
     const updatedCuestions = [...newQuestions];
     updatedCuestions[counterValue - 1] = question;
@@ -68,25 +73,19 @@ const ExamList = ({ exam }: ExamListProps) => {
   return (
     <>
       {showPrint ? (
-        <section className="bg-slate-700 flex w-3/4 h-full flex-col justify-center items-start p-10 gap-10 rounded-2xl overflow-y-scroll">
-          <button className=" bg-sky-600 p-2 rounded-xl w-1/4 flex gap-4 justify-center items-center text-xl">
-            Imprimir resultado <BsFillPrinterFill />
-          </button>
-          {newQuestions.map((question) => (
-            <article className="flex flex-col gap-4 w-full" key={question._id}>
-              <h3 className="text-xl">{question.question}</h3>
-              <div>
-                <h4 className=" text-slate-400">Your answer</h4>
-                <p>{question.answerUser}</p>
-              </div>
-              <div>
-                <h4 className="text-slate-400">Correct answer</h4>
-                <p>{question.answer}</p>
-              </div>
-              <p className=" text-blue-300">Value: {question.value}</p>
-              <div className="w-full h-0.5 bg-slate-500"></div>
-            </article>
-          ))}
+        <section className="h-140 w-3/4 bg-slate-700 rounded-xl overflow-y-auto">
+          <div className="flex flex-col min-h-full">
+            <h1 className="p-7 text-2xl font-medium">Resultados del test</h1>
+            {newQuestions.map((question) => (
+              <ExamPrint question={question} />
+            ))}
+            <button
+              onClick={print}
+              className="p-4 bg-blue-500 text-white mt-auto flex gap-4 justify-center items-center text-xl"
+            >
+              Imprimir resultado <BsFillPrinterFill />
+            </button>
+          </div>
         </section>
       ) : (
         <ExamQuestion
