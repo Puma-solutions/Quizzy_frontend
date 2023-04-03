@@ -6,7 +6,9 @@ const examsLayout = ({ children }: { children: React.ReactNode }) => {
       <header>
         <Navigation />
       </header>
-      <main className="flex justify-center items-center">{children}</main>
+      <main className="flex justify-center items-center h-screen w-screen">
+        {children}
+      </main>
     </>
   );
 };
