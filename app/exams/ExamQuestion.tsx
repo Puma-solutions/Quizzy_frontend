@@ -10,16 +10,15 @@ interface ExamQuestionProps {
     value: string;
     answerUser: string;
   };
-  setQuestion: Function;
+  updateCuestion: Function;
   counter: number;
 }
 
 const ExamQuestion = ({
   question,
-  setQuestion,
+  updateCuestion,
   counter,
 }: ExamQuestionProps) => {
-  console.log("hola");
   const [show, setShow] = useState(false);
   const [userAnswer, setUserAnswer] = useState("");
 
@@ -35,8 +34,7 @@ const ExamQuestion = ({
     setShow(false);
     question.value = e.target.id;
     question.answerUser = userAnswer;
-    console.log("question", question);
-    setQuestion(counter + 1);
+    updateCuestion(counter + 1, question);
   };
   return (
     <div className="bg-slate-700 flex w-3/4 h-140 flex-col justify-start items-center p-6 gap-6 rounded-2xl">

@@ -1,7 +1,8 @@
 "use client";
 
+import { useRouter } from "next/router";
 import ExamQuestion from "./ExamQuestion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ExamListProps {
   exam: {
@@ -22,6 +23,7 @@ interface ExamListProps {
 const ExamList = ({ exam }: ExamListProps) => {
   const [counter, setCounter] = useState(0);
   const [newQuestions, setNewQuestions] = useState([{}]);
+  const [showPrint, setShowPrint] = useState(false);
   const randomizeQuestions = () => {
     const sortedQuestions = exam.questions.sort((_, __) => Math.random() - 0.5);
     const expandedQuestions = sortedQuestions.map((question) => ({
@@ -32,21 +34,30 @@ const ExamList = ({ exam }: ExamListProps) => {
     setNewQuestions(expandedQuestions);
   };
 
-  randomizeQuestions();
+  useEffect(() => {
+    randomizeQuestions();
+  }, []);
 
-  const incrementCounter = (counterValue: number) => {
+  const updateCuestion = (counterValue: number, question: object) => {
+    const updatedCuestions = [...newQuestions];
+    updatedCuestions[counterValue - 1] = question;
+    setNewQuestions(updatedCuestions);
     counterValue === newQuestions.length
-      ? console.log(newQuestions)
+      ? setShowPrint(true)
       : setCounter(counterValue);
   };
 
   return (
     <>
-      <ExamQuestion
-        question={newQuestions[counter]}
-        setQuestion={incrementCounter}
-        counter={counter}
-      />
+      {showPrint ? (
+        <></>
+      ) : (
+        <ExamQuestion
+          question={newQuestions[counter]}
+          updateCuestion={updateCuestion}
+          counter={counter}
+        />
+      )}
     </>
   );
 };
