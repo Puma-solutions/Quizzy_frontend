@@ -1,5 +1,4 @@
 import "../../styles/globals.css";
-
 import Head from "next/head";
 
 export const metadata = {
@@ -14,6 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link href="/fonts/CinaGeoTest.otf" rel="stylesheet" />
+      </Head>
       <body>{children}</body>
     </html>
   );
