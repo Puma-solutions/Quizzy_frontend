@@ -18,10 +18,10 @@ const HomePage = () => {
         nueva
       </p>
       <Image
-        src={"/images/gifHome.gif"}
+        src={"/images/lookingFor.gif"}
         alt="gif of a study girl"
-        width="500"
-        height="500"
+        width="300"
+        height="300"
       />
     </div>
   );

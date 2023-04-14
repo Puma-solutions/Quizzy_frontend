@@ -1,11 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
+import router from "next/router";
 import { AppstoreOutlined, UserOutlined } from "@ant-design/icons";
 import { Menu, Avatar } from "antd";
 import type { MenuProps } from "antd/es/menu";
 
 type MenuItem = Required<MenuProps>["items"][number];
+
+interface MenuCommonProps {
+  items: MenuItem[];
+  title: string;
+}
 
 function getItem(
   label: React.ReactNode,
@@ -21,13 +27,7 @@ function getItem(
   } as MenuItem;
 }
 
-const items: MenuItem[] = [
-  getItem("Legislacion", "0", <AppstoreOutlined />),
-  getItem("Adm recursos", "1", <AppstoreOutlined />),
-  getItem("Ingles", "2", <AppstoreOutlined />),
-];
-
-const MenuHome = () => {
+const MenuCommon = ({ items, title }: MenuCommonProps) => {
   return (
     <div className="menuHome">
       <div
@@ -47,13 +47,14 @@ const MenuHome = () => {
         />
         <p>Juan Jose Rodriguez</p>
       </div>
-      <h2>Mis materias</h2>
+      <h2>{title}</h2>
       <Menu
         style={{
           width: 350,
           backgroundColor: "transparent",
           borderRight: "0px",
         }}
+        onClick={() => {}}
         defaultOpenKeys={["sub1"]}
         items={items}
       />
@@ -61,4 +62,4 @@ const MenuHome = () => {
   );
 };
 
-export default MenuHome;
+export default MenuCommon;
