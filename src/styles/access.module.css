@@ -1,0 +1,61 @@
+.accessPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accessFormsContainer {
+  border: 1px solid rgba(206, 206, 206, 0.466);
+  border-radius: 2rem;
+  box-shadow: 0.7px 0.7px 2.7px rgba(0, 0, 0, 0.022),
+    1.7px 1.7px 6.9px rgba(0, 0, 0, 0.031),
+    3.4px 3.5px 14.2px rgba(0, 0, 0, 0.039),
+    6.9px 7.3px 29.2px rgba(0, 0, 0, 0.048), 19px 20px 80px rgba(0, 0, 0, 0.07);
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.formAccess {
+  width: 30rem;
+  height: 27rem;
+  padding: 2rem;
+}
+
+.submitButton {
+  width: 100%;
+  border-radius: 0.2rem 0.2rem 0.5rem 0.5rem;
+}
+
+.coverAccess {
+  position: absolute;
+  width: 31rem;
+  height: 27rem;
+  background-image: url("/images/coverAccess.png");
+  background-size: cover;
+  transition: all 0.5s;
+  border-radius: 2rem;
+}
+
+.swapAccessForm {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  background-color: white;
+  border: 1px solid rgba(117, 117, 117, 0.151);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 8.5px 9.4px 10px rgba(0, 0, 0, 0.07),
+    68px 75px 80px rgba(0, 0, 0, 0.14);
+  color: #02c9af;
+}
+
+.accessTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}

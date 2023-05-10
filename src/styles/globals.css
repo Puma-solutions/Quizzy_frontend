@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "CinaGeo";
+  src: url("/fonts/CinaGEOTest-Regular.otf");
+}
+
+@font-face {
+  font-family: "CinaGeoMedium";
+  src: url("/fonts/CinaGEOTest-Medium.otf");
+}
+
+@font-face {
+  font-family: "CinaGeoBold";
+  src: url("/fonts/CinaGEOTest-Bold.otf");
+}
+
+@font-face {
+  font-family: "CinaGeoLight";
+  src: url("/fonts/CinaGEOTest-Light.otf");
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "CinaGeo", sans-serif;
+  background-color: #f3f3f3;
+}
+
+h1 {
+  font-family: "CinaGeoBold", sans-serif;
+}
+
+h2,
+h3 {
+  font-family: "CinaGeoMedium", sans-serif;
+}
+
+.header {
+  position: absolute;
+  width: 100vw;
+  background-color: transparent;
+  box-shadow: 0px 1.4px 2.2px rgba(0, 0, 0, 0.02),
+    0px 3.4px 5.3px rgba(0, 0, 0, 0.028), 0px 6.4px 10px rgba(0, 0, 0, 0.035),
+    0px 11.4px 17.9px rgba(0, 0, 0, 0.042),
+    0px 21.3px 33.4px rgba(0, 0, 0, 0.05), 0px 51px 80px rgba(0, 0, 0, 0.07);
+  padding: 0;
+}
+
+.navbar {
+  padding: 0.2rem;
+}
+
+.navTitle {
+  font-size: 1.8rem;
+  font-family: "CinaGeoBold", sans-serif;
+}
+
+.navItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/images/bgHome.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 10rem;
+}
+
+.homePage h1 {
+  font-size: 6rem;
+  color: #02c9af;
+}
