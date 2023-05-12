@@ -47,12 +47,12 @@
   border: 1px solid rgba(117, 117, 117, 0.151);
   border-radius: 50%;
   font-size: 2.5rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 49%;
+  left: 49%;
   box-shadow: 8.5px 9.4px 10px rgba(0, 0, 0, 0.07),
     68px 75px 80px rgba(0, 0, 0, 0.14);
-  color: #02c9af;
+  color: #d00191;
+  transition: all 0.5s;
 }
 
 .accessTitle {

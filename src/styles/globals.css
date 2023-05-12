@@ -66,21 +66,3 @@ h3 {
   justify-content: center;
   align-items: center;
 }
-
-.homePage {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("/images/bgHome.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex-direction: column;
-  padding: 10rem;
-}
-
-.homePage h1 {
-  font-size: 6rem;
-  color: #02c9af;
-}

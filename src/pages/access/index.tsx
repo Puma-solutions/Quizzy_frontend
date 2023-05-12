@@ -15,7 +15,7 @@ const AccessPage = () => {
       setModeForm(false);
     } else {
       setPositionCover(100);
-      setRotationSwitch(360);
+      setRotationSwitch(0);
       setModeForm(true);
     }
   };
@@ -143,7 +143,14 @@ const AccessPage = () => {
             className={styles.coverAccess}
             style={{ transform: `translate(${positionCover}%, 0px)` }}
           ></div>
-          <button className={styles.swapAccessForm} onClick={handleSwitchForm}>
+          <button
+            className={styles.swapAccessForm}
+            onClick={handleSwitchForm}
+            style={{
+              transform: `rotate(${rotationSwitch}deg)`,
+            }}
+            title="Clickea para cambiar entre login/register"
+          >
             <SwapOutlined />
           </button>
         </div>
