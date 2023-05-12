@@ -1,6 +1,6 @@
 import { Layout, MenuProps } from "antd";
 import { Header } from "antd/lib/layout/layout";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/navbar";
 import { Metadata } from "next";
 import LeftMenu from "../menu/menu";
@@ -35,7 +35,7 @@ const NavMenuLayout = ({
 }: DashboardProps): JSX.Element => {
   return (
     <Layout>
-      <Header className="header">
+      <Header className={styles.header}>
         <Navbar items={items} />
       </Header>
       <main className={styles.mainLayout}>

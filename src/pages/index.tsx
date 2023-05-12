@@ -1,9 +1,15 @@
 import { Button } from "antd";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/home.module.css";
+import { useAuthContext } from "@/context/auth";
 
 const Home = () => {
+  const { userValidator } = useAuthContext();
+  const [user, setUser] = useState<any>();
+  useEffect(() => {
+    setUser(userValidator());
+  }, []);
   return (
     <section className={styles.homePage}>
       <h1>Quizzy</h1>
@@ -14,7 +20,7 @@ const Home = () => {
           <li>Comodo</li>
           <li>Facil</li>
         </ul>
-        <Link href="/access">
+        <Link href={user ? "/subjects" : "/access"}>
           <Button className={styles.homePageButton}>Empezar ya</Button>
         </Link>
       </article>

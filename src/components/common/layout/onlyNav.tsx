@@ -1,9 +1,10 @@
 import { Layout, MenuProps } from "antd";
 import { Header } from "antd/lib/layout/layout";
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../navbar/navbar";
 import { Metadata } from "next";
 import styles from "./styles.module.css";
+import { useAuthContext } from "@/context/auth";
 
 interface DashboardProps {
   children: React.ReactNode;

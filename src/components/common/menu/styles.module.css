@@ -1,0 +1,14 @@
+.menu {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 0.2fr 6fr 1.8fr;
+}
+
+.menuButton {
+  width: 100%;
+  background-color: rgb(34, 60, 71);
+  color: white;
+  align-self: flex-end;
+}

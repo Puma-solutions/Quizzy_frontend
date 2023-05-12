@@ -1,32 +1,34 @@
 import NavMenuLayout from "@/components/common/layout/navMenu";
-import { useAuthContext } from "@/context/auth";
 import { MenuProps } from "antd";
-import React, { useEffect } from "react";
+import React from "react";
+import styles from "./styles.module.css";
 
 const itemsMenu: MenuProps["items"] = [
   {
     label: "Arquitectura",
-    key: "/",
+    key: "arq",
     className: "navItem",
   },
   {
     label: "Legislacion",
-    key: "subjects",
+    key: "legislacion",
     className: "navItem",
   },
   {
     label: "AM2",
-    key: "others",
+    key: "am2",
     className: "navItem",
   },
 ];
 
 const SubjectsPage = () => {
-  const { userValidator } = useAuthContext();
-  useEffect(() => {
-    userValidator();
-  }, []);
-  return <NavMenuLayout itemsMenu={itemsMenu}>Subjects</NavMenuLayout>;
+  return (
+    <NavMenuLayout itemsMenu={itemsMenu}>
+      <div className={styles.container}>
+        <h1>Selecciona una materia para empezar!</h1>
+      </div>
+    </NavMenuLayout>
+  );
 };
 
 export default SubjectsPage;
