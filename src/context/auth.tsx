@@ -2,13 +2,15 @@ import { AuthContextType } from "@/types/auth";
 import { useRouter } from "next/router";
 import React, { createContext, useContext, useState } from "react";
 
-const AuthContext = createContext<AuthContextType>({});
+const AuthContext = createContext<AuthContextType>({
+  userValidator: () => {},
+});
 
 export const AuthContextProvider = ({ children }: any) => {
   const { push } = useRouter();
   const userValidator = () => {
     const user = localStorage.getItem("user");
-    !user && push("/login");
+    !user && push("/acess");
   };
   return (
     <AuthContext.Provider value={{ userValidator }}>

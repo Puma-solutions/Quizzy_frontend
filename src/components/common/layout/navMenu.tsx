@@ -3,17 +3,13 @@ import { Header } from "antd/lib/layout/layout";
 import React from "react";
 import Navbar from "../navbar/navbar";
 import { Metadata } from "next";
+import LeftMenu from "../menu/menu";
 import styles from "./styles.module.css";
 
 interface DashboardProps {
   children: React.ReactNode;
+  itemsMenu: MenuProps["items"];
 }
-
-export const metadata: Metadata = {
-  title: "Sling Academy",
-  description:
-    "This is a meta description. Welcome to slingacademy.com. Happy coding and have a nice day",
-};
 
 const items: MenuProps["items"] = [
   {
@@ -33,15 +29,21 @@ const items: MenuProps["items"] = [
   },
 ];
 
-const OnlyNavLayout = ({ children }: DashboardProps): JSX.Element => {
+const NavMenuLayout = ({
+  children,
+  itemsMenu,
+}: DashboardProps): JSX.Element => {
   return (
-    <Layout className={styles.layout}>
-      <Header className={styles.header}>
+    <Layout>
+      <Header className="header">
         <Navbar items={items} />
       </Header>
-      <main className={styles.mainNoMenu}>{children}</main>
+      <main className={styles.mainLayout}>
+        <LeftMenu items={itemsMenu} />
+        {children}
+      </main>
     </Layout>
   );
 };
 
-export default OnlyNavLayout;
+export default NavMenuLayout;

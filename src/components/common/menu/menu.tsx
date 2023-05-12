@@ -2,15 +2,14 @@ import { Menu } from "antd";
 import React, { useState } from "react";
 import type { MenuProps } from "antd";
 import { useRouter } from "next/router";
-import styles from "./styles.module.css";
 
-interface navbarProps {
+interface LeftMenuProps {
   items: MenuProps["items"];
 }
 
-const Navbar = ({ items }: navbarProps) => {
+const LeftMenu = ({ items }: LeftMenuProps) => {
   const { push } = useRouter();
-  const [current, setCurrent] = useState("brand");
+  const [current, setCurrent] = useState("");
   const onClick: MenuProps["onClick"] = (e) => {
     push(e.key.toString());
     setCurrent(e.key);
@@ -19,11 +18,11 @@ const Navbar = ({ items }: navbarProps) => {
     <Menu
       onClick={onClick}
       selectedKeys={[current]}
-      mode="horizontal"
+      mode="vertical"
       items={items}
-      className="navbar"
+      className="LeftMenu"
     />
   );
 };
 
-export default Navbar;
+export default LeftMenu;
