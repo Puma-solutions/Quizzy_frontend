@@ -1,11 +1,16 @@
 .menu {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  padding: 1rem;
   border-radius: 1rem;
-  display: grid;
-  grid-template-rows: 0.5fr 0.1fr 9fr 2fr;
+  padding: 1rem;
 }
 
+.menuItems {
+  height: auto;
+  overflow-y: scroll;
+}
 .menu h1 {
   align-items: center;
   font-size: 2rem;
@@ -18,8 +23,4 @@
   color: white;
   align-self: flex-end;
   font-size: 1.2rem;
-}
-
-.menuButton:hover {
-  color: rgb(204, 231, 253) !important;
 }

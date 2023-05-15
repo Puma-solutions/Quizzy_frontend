@@ -34,7 +34,7 @@ const NavMenuLayout = ({
   itemsMenu,
 }: DashboardProps): JSX.Element => {
   return (
-    <Layout>
+    <Layout className={styles.layoutNavMenu}>
       <Header className={styles.header}>
         <Navbar items={items} />
       </Header>

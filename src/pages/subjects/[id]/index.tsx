@@ -1,8 +1,13 @@
 import NavMenuLayout from "@/components/common/layout/navMenu";
-import { MenuProps } from "antd";
+import { Divider, Menu, MenuProps } from "antd";
 import React from "react";
-import styles from "./styles.module.css";
-import { CopyOutlined } from "@ant-design/icons";
+import styles from "../styles.module.css";
+import {
+  CopyOutlined,
+  EditOutlined,
+  PlayCircleOutlined,
+} from "@ant-design/icons";
+import { useRouter } from "next/router";
 
 const itemsMenu: MenuProps["items"] = [
   {
@@ -79,15 +84,50 @@ const itemsMenu: MenuProps["items"] = [
   },
 ];
 
-const SubjectsPage = () => {
+type MenuItem = Required<MenuProps>["items"][number];
+
+function getItem(
+  label: React.ReactNode,
+  key: React.Key,
+  icon?: React.ReactNode,
+  children?: MenuItem[],
+  type?: "group"
+): MenuItem {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  } as MenuItem;
+}
+
+const itemsExamns: MenuProps["items"] = [
+  {
+    label: "Examen 1",
+    key: "examen1",
+    className: "menuItemExam",
+    icon: <PlayCircleOutlined />,
+  },
+];
+const SubjectDetailPage = () => {
+  const router = useRouter();
+  const { id } = router.query;
   return (
     <NavMenuLayout itemsMenu={itemsMenu}>
-      <div className={styles.container}>
-        <h1>Selecciona una materia para empezar!</h1>
-        <img src="./images/subjectHome.gif" alt="" />
+      <div className={styles.idContainer}>
+        <h1>{id}</h1>
+        <section style={{ width: "100%" }}>
+          <h3>Examenes cargados</h3>
+          <Menu
+            items={itemsExamns}
+            mode="inline"
+            className={styles.menuExamns}
+          />
+        </section>
       </div>
     </NavMenuLayout>
   );
 };
 
-export default SubjectsPage;
+export default SubjectDetailPage;

@@ -24,8 +24,9 @@ const LeftMenu = ({ items }: LeftMenuProps) => {
         selectedKeys={[current]}
         mode="vertical"
         items={items}
-        className="LeftMenu"
+        className={styles.menuItems}
       />
+      <Divider />
       <Button className={styles.menuButton}>Agregar materia</Button>
     </div>
   );

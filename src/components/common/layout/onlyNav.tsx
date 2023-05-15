@@ -36,11 +36,13 @@ const items: MenuProps["items"] = [
 
 const OnlyNavLayout = ({ children }: DashboardProps): JSX.Element => {
   return (
-    <Layout className={styles.layout}>
-      <Header className={styles.header}>
-        <Navbar items={items} />
-      </Header>
-      <main className={styles.mainNoMenu}>{children}</main>
+    <Layout>
+      <body>
+        <Header className={styles.header}>
+          <Navbar items={items} />
+        </Header>
+        <main className={styles.mainNoMenu}>{children}</main>
+      </body>
     </Layout>
   );
 };
