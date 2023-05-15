@@ -3,12 +3,23 @@
   padding: 1rem;
   border-radius: 1rem;
   display: grid;
-  grid-template-rows: 1fr 0.2fr 6fr 1.8fr;
+  grid-template-rows: 0.5fr 0.1fr 9fr 2fr;
+}
+
+.menu h1 {
+  align-items: center;
+  font-size: 2rem;
 }
 
 .menuButton {
   width: 100%;
+  height: 3rem;
   background-color: rgb(34, 60, 71);
   color: white;
   align-self: flex-end;
+  font-size: 1.2rem;
+}
+
+.menuButton:hover {
+  color: rgb(204, 231, 253) !important;
 }
