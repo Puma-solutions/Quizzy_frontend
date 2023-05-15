@@ -102,12 +102,23 @@ function getItem(
   } as MenuItem;
 }
 
-const itemsExamns: MenuProps["items"] = [
+const itemsExamns: any = [
   {
-    label: "Examen 1",
+    label: (
+      <div className="menuItemExamTitle">
+        <p>Exam 1</p>
+        <button
+          onClick={() => {
+            alert("a");
+          }}
+        >
+          <PlayCircleOutlined />
+        </button>
+      </div>
+    ),
     key: "examen1",
     className: "menuItemExam",
-    icon: <PlayCircleOutlined />,
+    children: [{ label: "item 3" }, { label: "item 3" }],
   },
 ];
 const SubjectDetailPage = () => {

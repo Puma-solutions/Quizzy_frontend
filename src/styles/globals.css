@@ -68,10 +68,14 @@ h3 {
   font-size: 1.2rem;
 }
 
-.menuItemExam {
+.menuItemExamTitle {
+  font-size: 1.3rem;
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2rem;
+}
+
+.menuItemExamTitle button {
+  background-color: transparent;
+  border: none;
 }
